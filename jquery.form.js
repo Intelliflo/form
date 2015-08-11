@@ -954,14 +954,6 @@ $.fn.formToArray = function(semantic, elements) {
         els = $(els).get();  // convert to standard array
     }
 
-    // #386; account for inputs outside the form which use the 'form' attribute
-    if ( formId ) {
-        els2 = $(':input[form="' + formId + '"]').get(); // hat tip @thet
-        if ( els2.length ) {
-            els = (els || []).concat(els2);
-        }
-    }
-
     if (!els || !els.length) {
         return a;
     }
